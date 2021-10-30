@@ -28,6 +28,8 @@ EOF
 
 RUN <<EOF
     cd pytorch
+    pip3 install -r requirements.txt
+
     mkdir build_libtorch
     cd build_libtorch
     python3 ../tools/build_libtorch.py
