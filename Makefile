@@ -1,5 +1,5 @@
 PLATFORM=linux/arm32v7
-BUILD_OPTS=--config Release --parallel --build_shared_lib
+BUILD_OPTS=
 
 .PHONY: build
 build:
@@ -7,4 +7,4 @@ build:
 
 .PHONY: run
 run:
-	docker run --rm -v "$(PWD)/build:/pytorch/build" --platform "$(PLATFORM)" libtorch bash -c "mkdir build_libtorch && cd build_libtorch && python3 ../tools/build_libtorch.py $(BUILD_OPTS)"
+	docker run --rm -v "$(PWD)/build:/pytorch/build_libtorch" --platform "$(PLATFORM)" -w "/pytorch/build_libtorch" libtorch python3 ../tools/build_libtorch.py $(BUILD_OPTS)
