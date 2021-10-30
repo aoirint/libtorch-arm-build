@@ -1,5 +1,6 @@
 # syntax=docker/dockerfile:1.3-labs
-FROM arm32v7/ubuntu:bionic
+ARG BASE_IMAGE=arm32v7/python:3.7.12-buster
+FROM ${BASE_IMAGE}
 
 RUN <<EOF
     apt-get update
@@ -18,16 +19,8 @@ RUN <<EOF
 EOF
 
 RUN <<EOF
-    apt-get update
-    apt-get install -y \
-        python3 \
-        python3-pip
-
-    python3 -m pip install -U pip setuptools wheel
-EOF
-
-RUN <<EOF
     cd pytorch
+    python3 -m pip install -U pip setuptools wheel
     pip3 install -r requirements.txt
 EOF
 
