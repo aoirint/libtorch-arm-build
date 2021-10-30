@@ -25,6 +25,7 @@ RUN <<EOF
 EOF
 
 RUN <<EOF
+    cd pytorch
     mkdir build_libtorch
     cd build_libtorch
     python3 ../tools/build_libtorch.py
