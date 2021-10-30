@@ -7,4 +7,4 @@ build:
 
 .PHONY: run
 run:
-	docker run --rm -v "$(PWD)/build:/pytorch/build_libtorch" --platform "$(PLATFORM)" -w "/pytorch/build_libtorch" libtorch python3 ../tools/build_libtorch.py $(BUILD_OPTS)
+	docker run --rm -v "$(PWD)/build_libtorch:/pytorch/build_libtorch" --platform "$(PLATFORM)" -w "/pytorch/build_libtorch" libtorch python3 ../tools/build_libtorch.py $(BUILD_OPTS)
