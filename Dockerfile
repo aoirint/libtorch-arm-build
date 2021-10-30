@@ -12,7 +12,7 @@ EOF
 
 ARG PYTORCH_VERSION=v1.10.0
 RUN <<EOF
-    git clone --recursive https://github.com/pytorch/pytorch
+    git clone --recursive https://github.com/pytorch/pytorch.git
     cd pytorch
 
     git checkout "${PYTORCH_VERSION}"
