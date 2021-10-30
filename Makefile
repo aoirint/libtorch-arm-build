@@ -11,5 +11,7 @@ run:
 		-v "$(PWD)/build_libtorch:/pytorch/build_libtorch" \
 		--platform "$(PLATFORM)" \
 		-e "BUILD_TEST=0" \
+		-e "CC=gcc-7" \
+		-e "CXX=g++-7" \
 		-w "/pytorch/build_libtorch" \
 		libtorch python3 ../tools/build_libtorch.py $(BUILD_OPTS)
