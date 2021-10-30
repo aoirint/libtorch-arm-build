@@ -10,9 +10,12 @@ RUN <<EOF
         git
 EOF
 
+ARG PYTORCH_VERSION=v1.10.0
 RUN <<EOF
     git clone --recursive https://github.com/pytorch/pytorch
     cd pytorch
+
+    git checkout "${PYTORCH_VERSION}"
 
     git submodule sync
     git submodule update --init --recursive --jobs 0
