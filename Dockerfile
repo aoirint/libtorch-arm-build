@@ -27,4 +27,13 @@ RUN <<EOF
     pip3 install -r requirements.txt
 EOF
 
+RUN <<EOF
+    apt-get update
+    apt-get install -y \
+        libopenblas-dev \
+        libblas-dev \
+        m4 \
+        cython
+EOF
+
 WORKDIR /pytorch
