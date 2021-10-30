@@ -30,8 +30,8 @@ EOF
 RUN <<EOF
     apt-get update
     apt-get install -y \
-        gcc-7 \
-        g++-7
+        gcc-8 \
+        g++-8
 EOF
 
 WORKDIR /pytorch
