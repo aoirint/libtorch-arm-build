@@ -7,7 +7,9 @@ RUN <<EOF
     apt-get install -y \
         build-essential \
         cmake \
-        git
+        git \
+        gcc-8 \
+        g++-8
 EOF
 
 ARG PYTORCH_VERSION=v1.10.0
@@ -27,12 +29,4 @@ RUN <<EOF
     pip3 install -r requirements.txt
 EOF
 
-RUN <<EOF
-    apt-get update
-    apt-get install -y \
-        gcc-8 \
-        g++-8
-EOF
-
 WORKDIR /pytorch
-
