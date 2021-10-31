@@ -6,10 +6,12 @@ RUN <<EOF
     apt-get update
     apt-get install -y \
         build-essential \
+        ninja-build \
         cmake \
         git \
         gcc-8 \
-        g++-8
+        g++-8 \
+        libopenblas-dev
 EOF
 
 ARG PYTORCH_VERSION=v1.10.0
